@@ -15,6 +15,14 @@
       "url": "https://www.jfa.jp/about_jfa/organization/47fa/",
       "status": "starting_point",
       "notes": "全国の地域・都道府県協会の公式サイトを探す起点。個別リンクは確認後に登録する。"
+    },
+    {
+      "name": "中国地方の県協会・社会人リーグ公式情報（初回調査）",
+      "type": "regional_source_survey",
+      "url": "https://www.jfa.jp/about_jfa/organization/47fa/",
+      "status": "partial",
+      "checked_at": "2026-10-17",
+      "notes": "鳥取・島根・岡山・広島・山口の公式協会または社会人連盟サイトを確認。各県の情報源登録は部分的で、URL・掲載範囲・利用条件の確認を継続する。"
     }
   ],
   "regions": [
@@ -44,7 +52,7 @@
     },
     {
       "name": "中国",
-      "status": "not_researched"
+      "status": "partially_researched"
     },
     {
       "name": "四国",
@@ -388,58 +396,77 @@
     },
     {
       "name": "鳥取県",
-      "association_url": null,
+      "association_url": "https://www.fa-tottori.com/",
       "team_directory_url": null,
-      "league_results_url": null,
-      "categories_covered": [],
-      "collection_method": "undetermined",
+      "league_results_url": "https://www.fa-tottori.com/?p=24981",
+      "categories_covered": [
+        "県社会人リーグ（トップリーグ・セカンドリーグ）"
+      ],
+      "collection_method": "manual_review_first",
       "usage_terms_status": "not_checked",
-      "status": "not_researched",
-      "notes": ""
+      "status": "partially_researched",
+      "notes": "2026年度第50回鳥取県サッカーリーグの公式大会ページを確認。出場チームと大会概要が掲載。協会サイト内の各カテゴリー・過年度結果の網羅性は未確認。",
+      "checked_at": "2026-10-17"
     },
     {
       "name": "島根県",
-      "association_url": null,
-      "team_directory_url": null,
-      "league_results_url": null,
-      "categories_covered": [],
-      "collection_method": "undetermined",
+      "association_url": "https://www.fa-shimane.or.jp/",
+      "team_directory_url": "https://www.fa-shimane.or.jp/kinds/category1",
+      "league_results_url": "https://www.fa-shimane.or.jp/kinds/category1/tournament",
+      "categories_covered": [
+        "第1種（社会人等）",
+        "県社会人リーグ日程・大会情報"
+      ],
+      "collection_method": "manual_review_first",
       "usage_terms_status": "not_checked",
-      "status": "not_researched",
-      "notes": ""
+      "status": "partially_researched",
+      "notes": "協会の第1種ページで2026年度島根県社会人リーグ1部・2部日程の案内と大会情報ページを確認。結果ファイルの個別URLと利用条件は未確認。",
+      "checked_at": "2026-10-17"
     },
     {
       "name": "岡山県",
-      "association_url": null,
-      "team_directory_url": null,
-      "league_results_url": null,
-      "categories_covered": [],
-      "collection_method": "undetermined",
+      "association_url": "https://okayama-fa.or.jp/",
+      "team_directory_url": "https://okayama-ssl.jp/",
+      "league_results_url": "https://okayama-ssl.jp/result/",
+      "categories_covered": [
+        "県社会人リーグ1部・2部",
+        "備前・備中・美作地区リーグ"
+      ],
+      "collection_method": "manual_review_first",
       "usage_terms_status": "not_checked",
-      "status": "not_researched",
-      "notes": ""
+      "status": "partially_researched",
+      "notes": "岡山社会人サッカー連盟の公式サイトに県リーグ・地区リーグの試合日程・結果一覧がある。各ページの年度・結果収録範囲と利用条件は未確認。",
+      "checked_at": "2026-10-17"
     },
     {
       "name": "広島県",
-      "association_url": null,
-      "team_directory_url": null,
-      "league_results_url": null,
-      "categories_covered": [],
-      "collection_method": "undetermined",
+      "association_url": "https://www.hifa.jp/",
+      "team_directory_url": "https://www.hifa.jp/associations/cat1_adult/",
+      "league_results_url": "https://www.hifa.jp/competition/category/cat1_adults/",
+      "categories_covered": [
+        "第1種社会人",
+        "広島県社会人リーグ",
+        "地区社会人リーグ"
+      ],
+      "collection_method": "manual_review_first",
       "usage_terms_status": "not_checked",
-      "status": "not_researched",
-      "notes": ""
+      "status": "partially_researched",
+      "notes": "県協会の第1種委員会ページに加盟チーム案内、社会人大会情報ページにリーグの試合速報・結果が掲載。県リーグ2部までの補完情報源としてSports Onlineも調査候補。利用条件は未確認。",
+      "checked_at": "2026-10-17"
     },
     {
       "name": "山口県",
-      "association_url": null,
-      "team_directory_url": null,
-      "league_results_url": null,
-      "categories_covered": [],
-      "collection_method": "undetermined",
+      "association_url": "https://yamaguchi-fa.com/",
+      "team_directory_url": "https://yamaguchi-fa.com/archives/16666",
+      "league_results_url": "https://yamaguchi-fa.com/archives/16372",
+      "categories_covered": [
+        "県社会人リーグ1部・2部・3部"
+      ],
+      "collection_method": "manual_review_first",
       "usage_terms_status": "not_checked",
-      "status": "not_researched",
-      "notes": ""
+      "status": "partially_researched",
+      "notes": "2026年度山口県社会人リーグの公式ページに日程・結果（星取表）とエントリー表が掲載。ページ上では2026年10月14日更新を確認。過年度分と利用条件は未確認。",
+      "checked_at": "2026-10-17"
     },
     {
       "name": "徳島県",
