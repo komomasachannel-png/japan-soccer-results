@@ -10,7 +10,19 @@
 header{background:linear-gradient(125deg,#102a43,#176b87);color:white;padding:27px 18px 31px}.wrap,main,footer{max-width:980px;margin:auto}.brand{font-size:12px;font-weight:800;letter-spacing:.16em;color:#a9dce3}h1{font-size:clamp(28px,5vw,42px);line-height:1.13;margin:10px 0}header p{margin:10px 0 0;color:#d9e8ef;max-width:610px;font-size:14px}
 main{padding:22px 14px 48px}.intro{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:0 0 15px}.eyebrow{font-size:11px;color:var(--blue);font-weight:800;letter-spacing:.12em}.intro h2,.results-head h2{font-size:21px;margin:3px 0 0}.tag{border:1px solid var(--line);background:white;border-radius:999px;padding:6px 10px;font-size:11px;color:var(--muted);white-space:nowrap}
 .panel{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:15px;box-shadow:0 4px 18px #102a4308}.panel h3{font-size:16px;margin:0 0 5px}.hint{font-size:13px;color:var(--muted);margin:0 0 14px}
-.map-layout{display:grid;grid-template-columns:1fr;gap:12px;align-items:center}.japan-map{display:block;width:100%;max-width:410px;margin:auto;max-height:470px}.region-shape{stroke:#fff;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;transition:filter .15s,stroke-width .15s}.region-shape:hover,.region-shape:focus,.region-shape.active{filter:brightness(.94);stroke:#17324a;stroke-width:3.2;outline:none}.region-label{font-size:11px;font-weight:800;fill:#17324a;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none}.map-note{font-size:12px;text-align:center;color:var(--muted);margin:0}.region-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.region{border:1px solid var(--line);border-radius:12px;padding:12px 9px;text-align:left;background:#fbfcfd;color:var(--ink);min-height:72px;cursor:pointer}.region strong{display:block;font-size:14px}.region small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.region:focus-visible,.region:hover,.region.active{outline:2px solid var(--teal);outline-offset:1px;background:#effaf7}
+.map-layout{display:grid;grid-template-columns:1fr;gap:12px;align-items:center}.japan-map{display:block;width:100%;max-width:410px;margin:auto;max-height:470px}.region-shape{stroke:#fff;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;transition:filter .15s,stroke-width .15s}.region-shape:hover,.region-shape:focus,.region-shape.active{filter:brightness(.94);stroke:#17324a;stroke-width:3.2;outline:none}
+.region-shape[data-region="hokkaido"]{fill:#f4c66a}
+.region-shape[data-region="tohoku"]{fill:#8bc9a5}
+.region-shape[data-region="kanto"]{fill:#f19b8f}
+.region-shape[data-region="hokushinetsu"]{fill:#a9a0e8}
+.region-shape[data-region="tokai"]{fill:#f1c1d5}
+.region-shape[data-region="kansai"]{fill:#f0d985}
+.region-shape[data-region="chugoku"]{fill:#83cbd0}
+.region-shape[data-region="shikoku"]{fill:#b4c8f3}
+.region-shape[data-region="kyushu"]{fill:#a7d8a1}
+.region-shape[data-region] path{fill:inherit;stroke:#fff;stroke-width:1.2;stroke-linejoin:round}
+.region-shape[data-region]:hover,.region-shape[data-region]:focus,.region-shape[data-region].active{filter:brightness(.94);stroke:#17324a;stroke-width:3.2;outline:none}
+.region-label{font-size:11px;font-weight:800;fill:#17324a;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none}.map-note{font-size:12px;text-align:center;color:var(--muted);margin:0}.region-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.region{border:1px solid var(--line);border-radius:12px;padding:12px 9px;text-align:left;background:#fbfcfd;color:var(--ink);min-height:72px;cursor:pointer}.region strong{display:block;font-size:14px}.region small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.region:focus-visible,.region:hover,.region.active{outline:2px solid var(--teal);outline-offset:1px;background:#effaf7}
 .results-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.back{background:transparent;border:1px solid var(--line);border-radius:9px;padding:8px 10px;color:var(--blue);font-weight:700;cursor:pointer}.league-list{display:grid;gap:9px}.league{border:1px solid var(--line);border-radius:13px;padding:13px;display:flex;align-items:center;justify-content:space-between;gap:10px}.league h3{margin:0;font-size:15px}.league p{margin:3px 0 0;color:var(--muted);font-size:12px}.pill{font-size:10px;font-weight:800;color:var(--blue);background:#e8f3f7;border-radius:999px;padding:5px 8px;white-space:nowrap}.pref-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.pref{border:1px solid var(--line);background:#fff;color:#315367;border-radius:999px;padding:7px 10px;font-size:12px}.notice{background:#f1f6f8;border-radius:12px;padding:12px 13px;color:#4d6573;font-size:12px;margin-top:13px}footer{padding:0 14px 28px;color:var(--muted);font-size:11px}
 @media(min-width:650px){main{padding:28px 22px 56px}.panel{padding:22px}.map-layout{grid-template-columns:minmax(260px,1fr) minmax(250px,1fr)}.japan-map{max-height:520px}.region-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style></head>
@@ -21,23 +33,216 @@ main{padding:22px 14px 48px}.intro{display:flex;justify-content:space-between;ga
 <div class="intro"><div><div class="eyebrow">EXPLORE BY REGION</div><h2>日本地図から地域を選ぶ</h2></div><span class="tag">試作版 0.2</span></div>
 <div class="panel"><p class="hint">色分けされた地域をタップするか、下の地域名から選んでください。</p>
 <div class="map-layout">
-<svg class="japan-map" viewBox="0 0 360 520" role="img" aria-label="地域ごとに色分けされた日本列島。各地域をタップして選択">
-<g id="hokkaido-map" class="region-shape" data-region="hokkaido" tabindex="0" role="button" aria-label="北海道" fill="#f4c66a"><path d="M253 26 L278 13 304 24 324 44 317 63 301 73 288 94 267 88 250 69 239 48Z"/><path d="M238 48 L249 48 255 59 247 70 238 62Z" fill="#f4c66a"/></g>
-<g id="tohoku-map" class="region-shape" data-region="tohoku" tabindex="0" role="button" aria-label="東北" fill="#8bc9a5"><path d="M232 103 L248 91 264 101 260 121 252 141 250 163 241 184 230 202 220 195 226 174 221 153 228 134Z"/></g>
-<g id="kanto-map" class="region-shape" data-region="kanto" tabindex="0" role="button" aria-label="関東" fill="#f19b8f"><path d="M220 195 L230 202 238 219 232 238 221 250 207 243 199 229 204 211Z"/></g>
-<g id="hokushinetsu-map" class="region-shape" data-region="hokushinetsu" tabindex="0" role="button" aria-label="北信越" fill="#a9a0e8"><path d="M204 178 L220 181 230 202 220 211 204 211 190 224 178 218 184 202 194 190Z"/></g>
-<g id="tokai-map" class="region-shape" data-region="tokai" tabindex="0" role="button" aria-label="東海" fill="#f1c1d5"><path d="M199 229 L207 243 221 250 215 267 203 282 188 274 180 259 184 242Z"/></g>
-<g id="kansai-map" class="region-shape" data-region="kansai" tabindex="0" role="button" aria-label="関西" fill="#f0d985"><path d="M180 259 L188 274 203 282 195 296 180 303 165 294 160 280 168 266Z"/></g>
-<g id="chugoku-map" class="region-shape" data-region="chugoku" tabindex="0" role="button" aria-label="中国" fill="#83cbd0"><path d="M160 280 L165 294 180 303 170 314 151 320 133 315 118 306 126 294 143 287Z"/></g>
-<g id="shikoku-map" class="region-shape" data-region="shikoku" tabindex="0" role="button" aria-label="四国" fill="#b4c8f3"><path d="M153 323 L172 319 181 328 173 338 154 342 140 337 140 329Z"/></g>
-<g id="kyushu-map" class="region-shape" data-region="kyushu" tabindex="0" role="button" aria-label="九州" fill="#a7d8a1"><path d="M112 309 L133 315 140 329 140 337 129 350 121 370 106 382 93 374 98 354 92 338 100 322Z"/></g>
-<path class="region-shape" data-region="kyushu" d="M91 389 L96 386 100 392 96 399 91 395Z" fill="#a7d8a1" tabindex="0" role="button" aria-label="沖縄を含む九州地域"/>
-<g class="region-labels" aria-hidden="true">
-<text class="region-label" x="283" y="52">北海道</text><text class="region-label" x="240" y="143">東北</text><text class="region-label" x="219" y="228">関東</text><text class="region-label" x="199" y="202">北信越</text><text class="region-label" x="198" y="260">東海</text><text class="region-label" x="178" y="284">関西</text><text class="region-label" x="145" y="305">中国</text><text class="region-label" x="159" y="333">四国</text><text class="region-label" x="112" y="348">九州</text>
-</g>
-<path d="M68 425 l8 -5 7 6 -6 7 -8 -2Z M48 439 l5 -3 4 4 -5 5Z" fill="#a7d8a1" stroke="#fff" stroke-width="1.5"/>
+<svg class="japan-map" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="都道府県ごとに分かれた日本地図。各都道府県をタップすると所属地域を選択できます">
+	<title>Japanese Prefectures</title>
+	<desc>Created by Geolonia (https://geolonia.com/).</desc>
+	<g class="svg-map">
+		<g class="prefectures">
+			<g class="okinawa kyushu-okinawa prefecture region-shape" data-code="47" data-region="kyushu" tabindex="0" role="button" aria-label="沖縄県（kyushu地域）">
+      <title>沖縄 / Okinawa</title>
+				<g>
+					<path d="M144.9,456.4c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H144.9z"/>
+				</g>
+			</g>
+			<g class="kagoshima kyushu kyushu-okinawa prefecture region-shape" data-code="46" data-region="kyushu" tabindex="0" role="button" aria-label="鹿児島県（kyushu地域）">
+        <title>鹿児島 / Kagoshima</title>
+				<path d="M99.3,912.7c-4.4,0-8,3.6-8,8V992c0,4.4,3.6,8,8,8h116.8c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H99.3z"/>
+			</g>
+			<g class="miyazaki kyushu kyushu-okinawa prefecture region-shape" data-code="45" data-region="kyushu" tabindex="0" role="button" aria-label="宮崎県（kyushu地域）">
+        <title>宮崎 / Miyazaki</title>
+				<path d="M167.8,821.5c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H167.8z"/>
+			</g>
+			<g class="oita kyushu kyushu-okinawa prefecture region-shape" data-code="44" data-region="kyushu" tabindex="0" role="button" aria-label="大分県（kyushu地域）">
+        <title>大分 / Oita</title>
+				<path d="M167.8,730.2c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H167.8z"/>
+			</g>
+			<g class="kumamoto kyushu kyushu-okinawa prefecture region-shape" data-code="43" data-region="kyushu" tabindex="0" role="button" aria-label="熊本県（kyushu地域）">
+        <title>熊本 / kumamoto</title>
+				<path d="M99.3,730.2c-4.4,0-8,3.6-8,8v162.5c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8V738.2c0-4.4-3.6-8-8-8H99.3z"/>
+			</g>
+			<g class="nagasaki kyushu kyushu-okinawa prefecture region-shape" data-code="42" data-region="kyushu" tabindex="0" role="button" aria-label="長崎県（kyushu地域）">
+        <title>長崎 / Nagasaki</title>
+				<path d="M8,638.9c-4.4,0-8,3.6-8,8v94c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8v-94c0-4.4-3.6-8-8-8H8z"/>
+			</g>
+			<g class="saga kyushu kyushu-okinawa prefecture region-shape" data-code="41" data-region="kyushu" tabindex="0" role="button" aria-label="佐賀県（kyushu地域）">
+        <title>佐賀 / Saga</title>
+				<path d="M53.7,638.9c-4.4,0-8,3.6-8,8v94c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8v-94c0-4.4-3.6-8-8-8H53.7z"/>
+			</g>
+			<g class="fukuoka kyushu kyushu-okinawa prefecture region-shape" data-code="40" data-region="kyushu" tabindex="0" role="button" aria-label="福岡県（kyushu地域）">
+        <title>福岡 / Fukuoka</title>
+				<path d="M99.3,638.9c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h116.8c4.4,0,8-3.6,8-8V647c0-4.4-3.6-8-8-8H99.3z"/>
+			</g>
+			<g class="kochi shikoku prefecture region-shape" data-code="39" data-region="shikoku" tabindex="0" role="button" aria-label="高知県（shikoku地域）">
+        <title>高知 / Kochi</title>
+				<path d="M281.9,935.6c-4.4,0-8,3.6-8,8V992c0,4.4,3.6,8,8,8H353c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H281.9z"/>
+			</g>
+			<g class="ehime shikoku prefecture region-shape" data-code="38" data-region="shikoku" tabindex="0" role="button" aria-label="愛媛県（shikoku地域）">
+        <title>愛媛 / Ehime</title>
+				<path d="M281.9,867.1c-4.4,0-8,3.6-8,8v48.4c0,4.4,3.6,8,8,8H353c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H281.9z"/>
+			</g>
+			<g class="kagawa shikoku prefecture region-shape" data-code="37" data-region="shikoku" tabindex="0" role="button" aria-label="香川県（shikoku地域）">
+        <title>香川 / Kagawa</title>
+				<path d="M373.1,867.1c-4.4,0-8,3.6-8,8v48.4c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H373.1z"/>
+			</g>
+			<g class="tokushima shikoku prefecture region-shape" data-code="36" data-region="shikoku" tabindex="0" role="button" aria-label="徳島県（shikoku地域）">
+        <title>徳島 / Tokushima</title>
+				<path d="M373.1,935.6c-4.4,0-8,3.6-8,8V992c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H373.1z"/>
+			</g>
+			<g class="yamaguchi chugoku prefecture region-shape" data-code="35" data-region="chugoku" tabindex="0" role="button" aria-label="山口県（chugoku地域）">
+        <title>山口 / Yamaguchi</title>
+				<path d="M281.9,638.9c-4.4,0-8,3.6-8,8v162.5c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8V647c0-4.4-3.6-8-8-8H281.9z"/>
+			</g>
+			<g class="hiroshima chugoku prefecture region-shape" data-code="34" data-region="chugoku" tabindex="0" role="button" aria-label="広島県（chugoku地域）">
+        <title>広島 / Hiroshima</title>
+				<path d="M327.5,730.2c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H327.5z"/>
+			</g>
+			<g class="okayama chugoku prefecture region-shape" data-code="33" data-region="chugoku" tabindex="0" role="button" aria-label="岡山県（chugoku地域）">
+        <title>岡山 / Okayama</title>
+				<path d="M395.9,730.2c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H395.9z"/>
+			</g>
+			<g class="shimane chugoku prefecture region-shape" data-code="32" data-region="chugoku" tabindex="0" role="button" aria-label="島根県（chugoku地域）">
+        <title>島根 / Shimane</title>
+				<path d="M327.5,638.9c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8V647c0-4.4-3.6-8-8-8H327.5z"/>
+			</g>
+			<g class="tottori chugoku prefecture region-shape" data-code="31" data-region="chugoku" tabindex="0" role="button" aria-label="鳥取県（chugoku地域）">
+        <title>鳥取 / Tottori</title>
+				<path d="M395.9,638.9c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8V647c0-4.4-3.6-8-8-8H395.9z"/>
+			</g>
+			<g class="wakayama kinki prefecture region-shape" data-code="30" data-region="kansai" tabindex="0" role="button" aria-label="和歌山県（kansai地域）">
+        <title>和歌山 / Wakayama</title>
+				<path d="M510,958.4c-4.4,0-8,3.6-8,8V992c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-25.6c0-4.4-3.6-8-8-8H510z"/>
+			</g>
+			<g class="nara kinki prefecture region-shape" data-code="29" data-region="kansai" tabindex="0" role="button" aria-label="奈良県（kansai地域）">
+        <title>奈良 / Nara</title>
+				<path d="M555.7,775.8c-4.4,0-8,3.6-8,8v162.5c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8V783.9c0-4.4-3.6-8-8-8H555.7z"/>
+			</g>
+			<g class="hyogo kinki prefecture region-shape" data-code="28" data-region="kansai" tabindex="0" role="button" aria-label="兵庫県（kansai地域）">
+        <title>兵庫 / Hyogo</title>
+				<path d="M441.6,638.9c-4.4,0-8,3.6-8,8v162.5c0,4.4,3.6,8,8,8H490c4.4,0,8-3.6,8-8V647c0-4.4-3.6-8-8-8H441.6z"/>
+			</g>
+			<g class="osaka kinki prefecture region-shape" data-code="27" data-region="kansai" tabindex="0" role="button" aria-label="大阪府（kansai地域）">
+        <title>大阪 / Osaka</title>
+				<path d="M510,775.8c-4.4,0-8,3.6-8,8v162.5c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8V783.9c0-4.4-3.6-8-8-8H510z"/>
+			</g>
+			<g class="kyoto kinki prefecture region-shape" data-code="26" data-region="kansai" tabindex="0" role="button" aria-label="京都府（kansai地域）">
+        <title>京都 / Kyoto</title>
+				<path d="M510,638.9c-4.4,0-8,3.6-8,8v116.8c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8h-25.6c-6.6,0-12-5.4-12-12
+					V647c0-4.4-3.6-8-8-8H510z"/>
+			</g>
+			<g class="shiga kinki prefecture region-shape" data-code="25" data-region="kansai" tabindex="0" role="button" aria-label="滋賀県（kansai地域）">
+        <title>滋賀 / Shiga</title>
+				<path d="M601.3,684.6c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H601.3z"/>
+			</g>
+			<g class="mie kinki prefecture region-shape" data-code="24" data-region="tokai" tabindex="0" role="button" aria-label="三重県（tokai地域）">
+        <title>三重 / Mie</title>
+				<path d="M601.3,775.8c-4.4,0-8,3.6-8,8V992c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8V783.9c0-4.4-3.6-8-8-8H601.3z"/>
+			</g>
+			<g class="aichi chubu prefecture region-shape" data-code="23" data-region="tokai" tabindex="0" role="button" aria-label="愛知県（tokai地域）">
+        <title>愛知 / Aichi</title>
+				<path d="M647,867.1c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H647z"/>
+			</g>
+			<g class="shizuoka chubu prefecture region-shape" data-code="22" data-region="tokai" tabindex="0" role="button" aria-label="静岡県（tokai地域）">
+        <title>静岡 / Shizuoka</title>
+				<path d="M738.2,867.1c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H738.2z"/>
+			</g>
+			<g class="gifu chubu prefecture region-shape" data-code="21" data-region="tokai" tabindex="0" role="button" aria-label="岐阜県（tokai地域）">
+        <title>岐阜 / Gifu</title>
+				<path d="M647,593.3c-4.4,0-8,3.6-8,8v253.7c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8V601.3c0-4.4-3.6-8-8-8H647z"/>
+			</g>
+			<g class="nagano chubu prefecture region-shape" data-code="20" data-region="hokushinetsu" tabindex="0" role="button" aria-label="長野県（hokushinetsu地域）">
+        <title>長野 / Nagano</title>
+				<path d="M715.4,593.3c-4.4,0-8,3.6-8,8v253.7c0,4.4,3.6,8,8,8H741c4.4,0,8-3.6,8-8v-71.2c0-6.6,5.4-12,12-12h2.7c4.4,0,8-3.6,8-8
+					V601.3c0-4.4-3.6-8-8-8H715.4z"/>
+			</g>
+			<g class="yamanashi chubu prefecture region-shape" data-code="19" data-region="kanto" tabindex="0" role="button" aria-label="山梨県（kanto地域）">
+        <title>山梨 / Yamanashi</title>
+				<path d="M761,775.8c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H761z"/>
+			</g>
+			<g class="fukui chubu prefecture region-shape" data-code="18" data-region="hokushinetsu" tabindex="0" role="button" aria-label="福井県（hokushinetsu地域）">
+        <title>福井 / Fukui</title>
+				<path d="M555.7,638.9c-4.4,0-8,3.6-8,8v25.6c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8h-25.6c-4.4,0-8,3.6-8,8
+					v25.6c0,6.6-5.4,12-12,12H555.7z"/>
+			</g>
+			<g class="ishikawa chubu prefecture region-shape" data-code="17" data-region="hokushinetsu" tabindex="0" role="button" aria-label="石川県（hokushinetsu地域）">
+        <title>石川 / Ishikawa</title>
+				<path d="M601.3,433.6c-4.4,0-8,3.6-8,8v139.6c0,4.4,3.6,8,8,8h25.6c4.4,0,8-3.6,8-8V441.6c0-4.4-3.6-8-8-8H601.3z"/>
+			</g>
+			<g class="toyama chubu prefecture region-shape" data-code="16" data-region="hokushinetsu" tabindex="0" role="button" aria-label="富山県（hokushinetsu地域）">
+        <title>富山 / Toyama</title>
+				<path d="M647,502c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8V510c0-4.4-3.6-8-8-8H647z"/>
+			</g>
+			<g class="niigata chubu prefecture region-shape" data-code="15" data-region="hokushinetsu" tabindex="0" role="button" aria-label="新潟県（hokushinetsu地域）">
+        <title>新潟 / Niigata</title>
+				<path d="M738.2,502c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h71.2c4.4,0,8-3.6,8-8V464.4c0-4.4-3.6-8-8-8h-25.6c-4.4,0-8,3.6-8,8V490
+					c0,6.6-5.4,12-12,12H738.2z"/>
+			</g>
+			<g class="kanagawa kanto prefecture region-shape" data-code="14" data-region="kanto" tabindex="0" role="button" aria-label="神奈川県（kanto地域）">
+        <title>神奈川 / Kanagawa</title>
+				<path d="M829.5,867.1c-4.4,0-8,3.6-8,8v48.4c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H829.5z"/>
+			</g>
+			<g class="tokyo kanto prefecture region-shape" data-code="13" data-region="kanto" tabindex="0" role="button" aria-label="東京都（kanto地域）">
+        <title>東京 / Tokyo</title>
+				<path d="M829.5,775.8c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-2.7c0-6.6,5.4-12,12-12h25.6c4.4,0,8-3.6,8-8
+					v-48.4c0-4.4-3.6-8-8-8H829.5z"/>
+			</g>
+			<g class="chiba kanto prefecture region-shape" data-code="12" data-region="kanto" tabindex="0" role="button" aria-label="千葉県（kanto地域）">
+        <title>千葉 / Chiba</title>
+				<path d="M943.6,730.2c-4.4,0-8,3.6-8,8v208.1c0,4.4,3.6,8,8,8H992c4.4,0,8-3.6,8-8V738.2c0-4.4-3.6-8-8-8H943.6z"/>
+			</g>
+			<g class="saitama kanto prefecture region-shape" data-code="11" data-region="kanto" tabindex="0" role="button" aria-label="埼玉県（kanto地域）">
+        <title>埼玉 / Saitama</title>
+				<path d="M783.9,684.6c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h139.6c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H783.9z"/>
+			</g>
+			<g class="gunma kanto prefecture region-shape" data-code="10" data-region="kanto" tabindex="0" role="button" aria-label="群馬県（kanto地域）">
+        <title>群馬 / Gunma</title>
+				<path d="M783.9,593.3c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8H848c1.5,0,3.7-3.1,3.7-8v-71.2c0-4.9-2.2-8-3.7-8H783.9z"/>
+			</g>
+			<g class="tochigi kanto prefecture region-shape" data-code="9" data-region="kanto" tabindex="0" role="button" aria-label="栃木県（kanto地域）">
+        <title>栃木 / Tochigi</title>
+				<path d="M859.4,593.3c-1.5,0-3.7,3.1-3.7,8v71.2c0,4.9,2.2,8,3.7,8h64.1c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H859.4z"/>
+			</g>
+			<g class="ibaraki kanto prefecture region-shape" data-code="8" data-region="kanto" tabindex="0" role="button" aria-label="茨城県（kanto地域）">
+        <title>茨城 / Ibaraki</title>
+				<path d="M943.6,593.3c-4.4,0-8,3.6-8,8v116.8c0,4.4,3.6,8,8,8H992c4.4,0,8-3.6,8-8V601.3c0-4.4-3.6-8-8-8H943.6z"/>
+			</g>
+			<g class="fukushima tohoku prefecture region-shape" data-code="7" data-region="tohoku" tabindex="0" role="button" aria-label="福島県（tohoku地域）">
+        <title>福島 / Fukushima</title>
+				<path d="M829.5,456.4c-4.4,0-8,3.6-8,8v116.8c0,4.4,3.6,8,8,8H992c4.4,0,8-3.6,8-8V464.4c0-4.4-3.6-8-8-8H829.5z"/>
+			</g>
+			<g class="yamagata tohoku prefecture region-shape" data-code="6" data-region="tohoku" tabindex="0" role="button" aria-label="山形県（tohoku地域）">
+        <title>山形 / Yamagata</title>
+				<path d="M783.9,387.9c-4.4,0-8,3.6-8,8v48.4c0,4.4,3.6,8,8,8h94c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H783.9z"/>
+			</g>
+			<g class="akita tohoku prefecture region-shape" data-code="5" data-region="tohoku" tabindex="0" role="button" aria-label="秋田県（tohoku地域）">
+        <title>秋田 / Akita</title>
+				<path d="M783.9,296.6c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h94c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H783.9z"/>
+			</g>
+			<g class="miyagi tohoku prefecture region-shape" data-code="4" data-region="tohoku" tabindex="0" role="button" aria-label="宮城県（tohoku地域）">
+        <title>宮城 / Miyagi</title>
+				<path d="M898,387.9c-4.4,0-8,3.6-8,8v48.4c0,4.4,3.6,8,8,8h94c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H898z"/>
+			</g>
+			<g class="iwate tohoku prefecture region-shape" data-code="3" data-region="tohoku" tabindex="0" role="button" aria-label="岩手県（tohoku地域）">
+        <title>岩手 / Iwate</title>
+				<path d="M898,296.6c-4.4,0-8,3.6-8,8v71.2c0,4.4,3.6,8,8,8h94c4.4,0,8-3.6,8-8v-71.2c0-4.4-3.6-8-8-8H898z"/>
+			</g>
+			<g class="aomori tohoku prefecture region-shape" data-code="2" data-region="tohoku" tabindex="0" role="button" aria-label="青森県（tohoku地域）">
+        <title>青森 / Aomori</title>
+				<path d="M783.9,228.2c-4.4,0-8,3.6-8,8v48.4c0,4.4,3.6,8,8,8H992c4.4,0,8-3.6,8-8v-48.4c0-4.4-3.6-8-8-8H783.9z"/>
+			</g>
+			<g class="hokkaido prefecture region-shape" data-code="1" data-region="hokkaido" tabindex="0" role="button" aria-label="北海道（hokkaido地域）">
+        <title>北海道 / Hokkaido</title>
+				<path d="M783.9,0c-4.4,0-8,3.6-8,8v185.3c0,4.4,3.6,8,8,8h48.4c4.4,0,8-3.6,8-8v-25.6c0-6.6,5.4-12,12-12H992c4.4,0,8-3.6,8-8V8
+					c0-4.4-3.6-8-8-8H783.9z"/>
+			</g>
+		</g>
+		<g class="boundary-line" stroke="#EEEEEE" stroke-width="12" stroke-linejoin="round" style="">
+			<path d="M216.1,593.3H89.3c-1.1,0-2-0.9-2-2s0.9-2,2-2h126.9c4.4,0,8-3.6,8-8V454.4c0-1.1,0.9-2,2-2s2,0.9,2,2v126.9
+				C228.2,587.9,222.8,593.3,216.1,593.3z"/>
+		</g>
+	</g>
 </svg>
-<div><div class="region-grid" id="regionGrid"></div><p class="map-note" style="margin-top:12px">※地域ごとの色分けをした地図イラストです。都道府県境界は今後さらに精密化します。</p></div>
+
+<div><div class="region-grid" id="regionGrid"></div><p class="map-note" style="margin-top:12px">地図データ：Geolonia「Japanese Prefectures」（GFDL）。都道府県境界を表示し、地域ごとに色分けしています。一部の離島は省略されています。</p></div>
 </div></div>
 <div class="panel"><h3>データ整備のルール</h3><p class="hint" style="margin-bottom:0">確認できない試合結果は推測で埋めず、未確認として扱います。まずはJFL・地域リーグを優先し、選手の所属・移籍履歴は別プロジェクトとして管理します。</p></div>
 </section>
