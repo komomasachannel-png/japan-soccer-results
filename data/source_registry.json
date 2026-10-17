@@ -1,0 +1,593 @@
+{
+  "schema_version": 1,
+  "description": "日本サッカーの情報源台帳。公式サイトのURL・対象カテゴリー・取得方法・利用条件を整理する。未調査項目は未確認のまま保持し、推測でURLや許可状況を補わない。",
+  "policy": {
+    "prefer_primary_sources": true,
+    "store_source_url": true,
+    "record_usage_terms_before_automated_collection": true,
+    "public_access_does_not_imply_republication_permission": true,
+    "unknown_results_must_not_be_inferred": true
+  },
+  "discovery_sources": [
+    {
+      "name": "日本サッカー協会 9地域・47都道府県サッカー協会一覧",
+      "type": "national_association_directory",
+      "url": "https://www.jfa.jp/about_jfa/organization/47fa/",
+      "status": "starting_point",
+      "notes": "全国の地域・都道府県協会の公式サイトを探す起点。個別リンクは確認後に登録する。"
+    }
+  ],
+  "regions": [
+    {
+      "name": "北海道",
+      "status": "not_researched"
+    },
+    {
+      "name": "東北",
+      "status": "not_researched"
+    },
+    {
+      "name": "関東",
+      "status": "not_researched"
+    },
+    {
+      "name": "北信越",
+      "status": "not_researched"
+    },
+    {
+      "name": "東海",
+      "status": "not_researched"
+    },
+    {
+      "name": "関西",
+      "status": "not_researched"
+    },
+    {
+      "name": "中国",
+      "status": "not_researched"
+    },
+    {
+      "name": "四国",
+      "status": "not_researched"
+    },
+    {
+      "name": "九州",
+      "status": "not_researched"
+    }
+  ],
+  "prefectures": [
+    {
+      "name": "北海道",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "青森県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "岩手県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "宮城県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "秋田県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "山形県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "福島県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "茨城県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "栃木県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "群馬県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "埼玉県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "千葉県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "東京都",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "神奈川県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "山梨県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "新潟県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "長野県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "富山県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "石川県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "福井県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "静岡県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "愛知県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "岐阜県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "三重県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "滋賀県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "京都府",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "大阪府",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "兵庫県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "奈良県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "和歌山県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "鳥取県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "島根県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "岡山県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "広島県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "山口県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "徳島県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "香川県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "愛媛県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "高知県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "福岡県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "佐賀県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "長崎県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "熊本県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "大分県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "宮崎県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "鹿児島県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    },
+    {
+      "name": "沖縄県",
+      "association_url": null,
+      "team_directory_url": null,
+      "league_results_url": null,
+      "categories_covered": [],
+      "collection_method": "undetermined",
+      "usage_terms_status": "not_checked",
+      "status": "not_researched",
+      "notes": ""
+    }
+  ],
+  "fields_for_future_sources": {
+    "source_id": "stable identifier",
+    "name": "official organization, league, team, or service name",
+    "source_type": "association | league | team | results_service | archive | social",
+    "url": "exact verified URL",
+    "categories_covered": [
+      "JFL, regional league, prefectural league, etc."
+    ],
+    "seasons_covered": [
+      "years actually verified"
+    ],
+    "collection_method": "manual | official_api | permitted_automated_fetch | unknown",
+    "usage_terms_status": "allowed | permission_required | prohibited | not_checked",
+    "checked_at": "date of last verification",
+    "notes": "evidence and limitations"
+  }
+}
