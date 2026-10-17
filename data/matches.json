@@ -1,5 +1,15 @@
 {
   "schema_version": 1,
-  "description": "Verified match records only. An empty matches array means records have not yet been entered; it does not mean no matches were played.",
+  "description": "公式・公開資料で確認できた試合結果のみ登録する。matchesが空でも試合がなかった意味ではなく、まだデータを収録していない状態。",
+  "match_fields": {
+    "competition_id": "jfl または regional-kanto / pref-chugoku など、画面の大会IDと一致させる",
+    "season": "年度（数値）",
+    "date": "試合日 YYYY-MM-DD",
+    "home_team": "ホームチーム名",
+    "away_team": "アウェイチーム名",
+    "home_score": "ホーム得点（数値）",
+    "away_score": "アウェイ得点（数値）",
+    "source_url": "結果を確認できる公開ページURL"
+  },
   "matches": []
 }
