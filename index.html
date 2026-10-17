@@ -272,6 +272,22 @@ const regions=[
 const grid=document.getElementById('regionGrid'),home=document.getElementById('home'),detail=document.getElementById('detail');
 let matchData={matches:[]},selectedLeague=null,selectedSeason=null,zoomMode=false,zoomRegionId=null;
 const fullMapViewBox='0 0 1000 1000';
+let mapAnimationFrame=0;
+function animateMapViewBox(map,target,duration=720){
+ if(mapAnimationFrame)cancelAnimationFrame(mapAnimationFrame);
+ const from=map.getAttribute('viewBox').trim().split(/[ ,]+/).map(Number);
+ const to=target.trim().split(/[ ,]+/).map(Number);
+ if(from.length!==4||to.length!==4||[...from,...to].some(v=>!Number.isFinite(v))){map.setAttribute('viewBox',target);return}
+ const start=performance.now();
+ const ease=t=>1-Math.pow(1-t,3);
+ function frame(now){
+  const t=Math.min(1,(now-start)/duration),e=ease(t);
+  map.setAttribute('viewBox',from.map((v,i)=>v+(to[i]-v)*e).join(' '));
+  if(t<1)mapAnimationFrame=requestAnimationFrame(frame);else mapAnimationFrame=0;
+ }
+ mapAnimationFrame=requestAnimationFrame(frame);
+}
+
 const regionViewBoxes={hokkaido:'755 0 250 220',tohoku:'755 210 250 280',kanto:'755 560 250 410',hokushinetsu:'575 410 270 230',tokai:'575 570 280 430',kansai:'420 610 225 390',chugoku:'255 610 200 225',shikoku:'255 835 220 165',kyushu:'0 620 245 390'};
 fetch('./data/matches.json').then(r=>{if(!r.ok)throw new Error('data unavailable');return r.json()}).then(d=>{matchData=d}).catch(()=>{matchData={matches:[]}});
 regions.forEach(r=>{const b=document.createElement('button');b.className='region';b.dataset.region=r.id;b.innerHTML='<strong>'+r.name+'</strong><small>'+r.area+'</small>';b.addEventListener('click',()=>zoomRegion(r.id));grid.appendChild(b)});
@@ -282,7 +298,6 @@ function zoomRegion(id){
  document.getElementById('zoomTitle').textContent=r.name+'地方｜都道府県を選択';
  document.getElementById('mapLayout').classList.add('is-zoomed');
  const map=document.querySelector('.japan-map');
- map.setAttribute('viewBox',fullMapViewBox);
  document.querySelectorAll('.region-shape[data-region]').forEach(n=>n.classList.toggle('active',n.dataset.region===id));
  document.querySelectorAll('.region').forEach(n=>n.classList.toggle('active',n.dataset.region===id));
  const regionNodes=[...document.querySelectorAll('.region-shape[data-region="'+id+'"]')];
@@ -301,12 +316,12 @@ function zoomRegion(id){
    const minX=Math.min(...boxes.map(b=>b.minX)),maxX=Math.max(...boxes.map(b=>b.maxX));
    const minY=Math.min(...boxes.map(b=>b.minY)),maxY=Math.max(...boxes.map(b=>b.maxY));
    const pad=Math.max(maxX-minX,maxY-minY)*.12;
-   map.setAttribute('viewBox',[minX-pad,minY-pad,maxX-minX+pad*2,maxY-minY+pad*2].join(' '));
+   animateMapViewBox(map,[minX-pad,minY-pad,maxX-minX+pad*2,maxY-minY+pad*2].join(' '));
   }
  }
  window.scrollTo({top:0,behavior:'smooth'});
 }
-function resetMap(){zoomMode=false;zoomRegionId=null;document.getElementById('mapZoomControls').hidden=true;document.getElementById('mapLayout').classList.remove('is-zoomed');document.querySelector('.japan-map').setAttribute('viewBox',fullMapViewBox);document.querySelectorAll('.region-shape[data-region],.region').forEach(n=>n.classList.remove('active','pref-selected'));window.scrollTo({top:0,behavior:'smooth'})}
+function resetMap(){zoomMode=false;zoomRegionId=null;document.getElementById('mapZoomControls').hidden=true;document.getElementById('mapLayout').classList.remove('is-zoomed');animateMapViewBox(document.querySelector('.japan-map'),fullMapViewBox,620);document.querySelectorAll('.region-shape[data-region],.region').forEach(n=>n.classList.remove('active','pref-selected'));window.scrollTo({top:0,behavior:'smooth'})}
 function openRegionDetail(id,selectedPref=null){const r=regions.find(x=>x.id===id);if(!r)return;home.hidden=true;detail.hidden=false;document.getElementById('regionTitle').textContent=selectedPref?selectedPref+'の試合結果':r.name+'エリア';document.getElementById('regionDescription').textContent=selectedPref?'選択した都道府県：'+selectedPref+'。リーグを選択してください。':'対象都道府県：'+r.pref.join('・');document.querySelectorAll('.region-shape[data-region]').forEach(n=>n.classList.toggle('active',n.dataset.region===id));const list=document.getElementById('leagueList');list.innerHTML='';[{id:'jfl',name:'JFL（日本フットボールリーグ）',desc:'全国リーグ · 登録済みの試合結果',pill:'全国'},{id:'regional-'+id,name:r.area,desc:'地域リーグ · 年度別の試合結果',pill:'地域'},{id:'pref-'+id,name:(selectedPref||'都道府県')+'リーグ',desc:'都道府県リーグの試合結果',pill:'都道府県'}].forEach(l=>{const el=document.createElement('button');el.type='button';el.className='league';el.dataset.league=l.id;el.innerHTML='<div><h3>'+l.name+'</h3><p>'+l.desc+'</p></div><span class="pill">'+l.pill+'</span>';el.addEventListener('click',()=>chooseLeague(l,r));list.appendChild(el)});const prefs=document.getElementById('prefList');prefs.innerHTML='';r.pref.forEach(p=>{const s=document.createElement('span');s.className='pref';s.textContent=p;prefs.appendChild(s)});document.getElementById('seasonPanel').hidden=true;selectedLeague=null;window.scrollTo({top:0,behavior:'smooth'})}
 function chooseLeague(l,r){selectedLeague={...l,region:r.id};selectedSeason=null;document.querySelectorAll('.league').forEach(n=>n.classList.toggle('selected',n.dataset.league===l.id));const panel=document.getElementById('seasonPanel');panel.hidden=false;document.getElementById('seasonHeading').textContent=l.name+'｜年度を選ぶ';const buttons=document.getElementById('seasonButtons');buttons.innerHTML='';[2026,2025,2024,2023,2022].forEach(y=>{const b=document.createElement('button');b.type='button';b.className='season-button';b.textContent=y+'年';b.addEventListener('click',()=>chooseSeason(y,b));buttons.appendChild(b)});document.getElementById('matchResults').innerHTML='<div class="empty-state">年度を選択してください。登録済みの試合結果がある場合はここに表示されます。</div>';panel.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function chooseSeason(year,button){selectedSeason=year;document.querySelectorAll('.season-button').forEach(b=>b.classList.toggle('active',b===button));const results=document.getElementById('matchResults');const rows=(matchData.matches||[]).filter(m=>m.competition_id===selectedLeague.id&&Number(m.season)===year);if(!rows.length){results.innerHTML='<div class="empty-state"><strong>'+year+'年の試合結果は、まだ登録されていません。</strong><br>これは「試合がなかった」という意味ではなく、このデータベースへの収録がまだない状態です。公式記録などの出典を確認してから追加します。</div>';return}results.innerHTML='';const wrap=document.createElement('div');wrap.className='match-table-wrap';const table=document.createElement('table');table.className='match-table';table.innerHTML='<thead><tr><th>日付</th><th>ホーム</th><th>スコア</th><th>アウェイ</th><th>出典</th></tr></thead>';const body=document.createElement('tbody');rows.sort((a,b)=>(a.date||'').localeCompare(b.date||'')).forEach(m=>{const tr=document.createElement('tr');const source=m.source_url?'<a class="source-link" href="'+m.source_url+'" target="_blank" rel="noopener noreferrer">確認</a>':'未記載';[m.date||'日付不明',m.home_team||'不明',(m.home_score??'–')+' - '+(m.away_score??'–'),m.away_team||'不明',source].forEach((v,i)=>{const td=document.createElement('td');if(i===4)td.innerHTML=v;else td.textContent=v;tr.appendChild(td)});body.appendChild(tr)});table.appendChild(body);wrap.appendChild(table);results.appendChild(wrap)}
