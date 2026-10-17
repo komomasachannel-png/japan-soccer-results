@@ -22,7 +22,7 @@
       "url": "https://www.jfa.jp/about_jfa/organization/47fa/",
       "status": "partial",
       "checked_at": "2026-10-17",
-      "notes": "鳥取・島根・岡山・広島・山口の公式協会または社会人連盟サイトを確認。各県の情報源登録は部分的で、URL・掲載範囲・利用条件の確認を継続する。"
+      "notes": "鳥取・島根・岡山・広島・山口の公式協会または社会人連盟サイトを確認。各県の情報源登録は部分的で、URL・掲載範囲・利用条件の確認を継続する。 中国サッカーリーグ公式サイト（csl-jp.net）も確認し、地域リーグの情報源として別枠登録。"
     }
   ],
   "regions": [
@@ -397,7 +397,7 @@
     {
       "name": "鳥取県",
       "association_url": "https://www.fa-tottori.com/",
-      "team_directory_url": null,
+      "team_directory_url": "https://www.fa-tottori.com/?cat=2",
       "league_results_url": "https://www.fa-tottori.com/?p=24981",
       "categories_covered": [
         "県社会人リーグ（トップリーグ・セカンドリーグ）"
@@ -405,7 +405,7 @@
       "collection_method": "manual_review_first",
       "usage_terms_status": "not_checked",
       "status": "partially_researched",
-      "notes": "2026年度第50回鳥取県サッカーリーグの公式大会ページを確認。出場チームと大会概要が掲載。協会サイト内の各カテゴリー・過年度結果の網羅性は未確認。",
+      "notes": "2026年度第50回鳥取県サッカーリーグの公式大会ページを確認。出場チームと大会概要が掲載。協会サイト内の各カテゴリー・過年度結果の網羅性は未確認。 追加確認：協会の「1種（社会人・学連）」カテゴリー一覧をチーム・大会情報の入口として登録。",
       "checked_at": "2026-10-17"
     },
     {
@@ -615,6 +615,36 @@
     "collection_method": "manual | official_api | permitted_automated_fetch | unknown",
     "usage_terms_status": "allowed | permission_required | prohibited | not_checked",
     "checked_at": "date of last verification",
-    "notes": "evidence and limitations"
-  }
+    "notes": "evidence and limitations",
+    "regional_leagues": [
+      "name",
+      "region",
+      "official_url",
+      "team_directory_url",
+      "league_results_url",
+      "categories_covered",
+      "collection_method",
+      "usage_terms_status",
+      "status",
+      "checked_at",
+      "notes"
+    ]
+  },
+  "regional_leagues": [
+    {
+      "name": "中国サッカーリーグ",
+      "region": "中国",
+      "official_url": "https://csl-jp.net/",
+      "team_directory_url": "https://csl-jp.net/",
+      "league_results_url": "https://csl-jp.net/",
+      "categories_covered": [
+        "中国サッカーリーグ（男子）"
+      ],
+      "collection_method": "manual_review_first",
+      "usage_terms_status": "not_checked",
+      "status": "partially_researched",
+      "checked_at": "2026-10-17",
+      "notes": "公式トップに2026シーズン日程発表、試合日程・結果、順位表、星取表、得点ランキング、チーム情報への導線を確認。各ページの個別URL、過年度収録範囲、利用条件は未確認。"
+    }
+  ]
 }
