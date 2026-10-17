@@ -1,266 +1,40 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#173c32">
-<title>日本サッカー試合結果データベース</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102a43">
+<title>Japan Soccer Results</title>
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#20352d;background:#f3f6f2}
-*{box-sizing:border-box}
-body{margin:0}
-header{background:#173c32;color:white;padding:22px 16px}
-header h1{font-size:23px;margin:0 0 8px}
-header p{margin:0;font-size:13px;color:#d4e5dc}
-main{max-width:900px;margin:auto;padding:16px}
-section,.panel{background:white;border:1px solid #dce5dd;border-radius:14px;padding:16px;margin-bottom:14px}
-h2{font-size:19px;margin:0 0 12px}
-h3{font-size:16px;margin:16px 0 8px}
-button,select,input{font:inherit}
-button{border:0;border-radius:9px;background:#245c49;color:white;padding:11px 14px;cursor:pointer}
-button.secondary{background:#e6eee8;color:#234c3b}
-button.danger{background:#a52e2e}
-button:disabled{opacity:.5}
-input,select{width:100%;padding:10px;border:1px solid #bdcbbf;border-radius:8px;background:white;min-width:0}
-label{display:block;font-size:13px;font-weight:600;margin:10px 0 5px}
-small,.muted{color:#66786c;font-size:12px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.regions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.region{background:#e4eee4;color:#214c39;padding:13px 5px;font-size:13px}
-.region.active{background:#245c49;color:white}
-nav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
-nav button{flex:1;min-width:80px}
-nav button.active{background:#173c32}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.row>*{flex:1}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:8px 5px;border-bottom:1px solid #e0e8e1;text-align:center}
-th{background:#edf3ed}
-.table-wrap{overflow-x:auto}
-.match{border-bottom:1px solid #e1e8e1;padding:12px 0}
-.match:last-child{border-bottom:0}
-.score{font-size:19px;font-weight:700}
-.hidden{display:none!important}
-.notice{background:#fff6dc;border-radius:8px;padding:10px;font-size:13px}
-footer{text-align:center;padding:18px;color:#718075;font-size:12px}
-@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.regions{grid-template-columns:repeat(5,minmax(0,1fr))}}
-</style>
-</head>
+:root{--navy:#102a43;--blue:#176b87;--teal:#2a9d8f;--paper:#f4f7f8;--ink:#172b3a;--muted:#607583;--line:#dbe4e8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+header{background:linear-gradient(125deg,#102a43,#176b87);color:white;padding:28px 18px 32px}.wrap,main,footer{max-width:980px;margin:auto}.brand{font-size:12px;font-weight:800;letter-spacing:.16em;color:#a9dce3}h1{font-size:clamp(28px,5vw,42px);line-height:1.13;margin:10px 0}header p{margin:10px 0 0;color:#d9e8ef;max-width:610px;font-size:14px}
+main{padding:22px 14px 48px}.intro{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:0 0 15px}.eyebrow{font-size:11px;color:var(--blue);font-weight:800;letter-spacing:.12em}.intro h2,.results-head h2{font-size:21px;margin:3px 0 0}.tag{border:1px solid var(--line);background:white;border-radius:999px;padding:6px 10px;font-size:11px;color:var(--muted);white-space:nowrap}
+.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:15px;box-shadow:0 4px 18px #102a4308}.panel h3{font-size:16px;margin:0 0 5px}.hint{font-size:13px;color:var(--muted);margin:0 0 14px}
+.region-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.region{border:1px solid var(--line);border-radius:12px;padding:12px 9px;text-align:left;background:#fbfcfd;color:var(--ink);min-height:75px;cursor:pointer}.region strong{display:block;font-size:14px}.region small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.region:focus-visible,.region:hover{outline:2px solid var(--teal);outline-offset:1px;background:#effaf7}
+.region-map{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 16px}.map-node{font-size:11px;text-align:center;padding:10px 2px;background:#eaf0f3;border-radius:8px;color:#375568;border:1px solid transparent;cursor:pointer}.map-node.active{background:#d8f1ea;border-color:var(--teal);font-weight:800;color:#12665d}
+.results-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.back{background:transparent;border:1px solid var(--line);border-radius:9px;padding:8px 10px;color:var(--blue);font-weight:700;cursor:pointer}.league-list{display:grid;gap:9px}.league{border:1px solid var(--line);border-radius:13px;padding:13px;display:flex;align-items:center;justify-content:space-between;gap:10px}.league h3{margin:0;font-size:15px}.league p{margin:3px 0 0;color:var(--muted);font-size:12px}.pill{font-size:10px;font-weight:800;color:var(--blue);background:#e8f3f7;border-radius:999px;padding:5px 8px;white-space:nowrap}.notice{background:#f1f6f8;border-radius:12px;padding:12px 13px;color:#4d6573;font-size:12px;margin-top:13px}footer{padding:0 14px 28px;color:var(--muted);font-size:11px}
+@media(min-width:650px){main{padding:28px 22px 56px}.region-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.panel{padding:22px}.region-map{grid-template-columns:repeat(9,1fr)}}
+</style></head>
 <body>
-<header>
-  <h1>日本サッカー試合結果データベース</h1>
-  <p>JFLから都道府県リーグまで、全国の試合記録をつなぐ。</p>
-</header>
-<main>
-<section>
-  <h2>全国リーグナビゲーション</h2>
-  <p class="muted">地域を選び、対象リーグへ進もう。</p>
-  <div class="regions" id="regions"></div>
-  <div id="leagueArea" class="hidden">
-    <h3 id="regionTitle"></h3>
-    <div id="leagues" class="grid"></div>
-  </div>
-</section>
-
-<nav>
-  <button class="active" data-page="matches">試合結果</button>
-  <button data-page="standings">順位表</button>
-  <button data-page="backup">データ管理</button>
-</nav>
-
-<section id="matches">
-  <h2>試合結果の登録</h2>
-  <div class="grid">
-    <div><label>シーズン</label><input id="season" value="2026"></div>
-    <div><label>リーグ・大会</label>
-      <select id="league">
-        <option>JFL</option>
-        <option>北海道サッカーリーグ</option>
-        <option>東北社会人サッカーリーグ</option>
-        <option>関東サッカーリーグ</option>
-        <option>北信越フットボールリーグ</option>
-        <option>東海社会人サッカーリーグ</option>
-        <option>関西サッカーリーグ</option>
-        <option>中国サッカーリーグ</option>
-        <option>四国サッカーリーグ</option>
-        <option>九州サッカーリーグ</option>
-        <option>都道府県リーグ</option>
-      </select>
-    </div>
-    <div><label>節</label><input id="round" placeholder="第1節"></div>
-    <div><label>試合日</label><input id="date" type="date"></div>
-    <div><label>ホームチーム</label><input id="home" placeholder="例：Honda FC"></div>
-    <div><label>アウェイチーム</label><input id="away" placeholder="例：FCティアモ枚方"></div>
-    <div><label>ホーム得点</label><input id="hg" type="number" min="0" inputmode="numeric"></div>
-    <div><label>アウェイ得点</label><input id="ag" type="number" min="0" inputmode="numeric"></div>
-    <div><label>会場（任意）</label><input id="venue" placeholder="競技場名"></div>
-  </div>
-  <label>情報源URL（任意）</label>
-  <input id="source" type="url" placeholder="公式結果ページのURL">
-  <label>確認状況</label>
-  <select id="verified">
-    <option value="confirmed">公式情報などで確認済み</option>
-    <option value="unverified">未確認・要照合</option>
-  </select>
-  <p class="muted">得点が未確定の試合は登録しないでね。未確認の結果は、確認済みの結果と区別して保存するよ。</p>
-  <button id="addMatch">試合結果を登録</button>
-  <p id="formMessage" class="muted"></p>
-  <h2 style="margin-top:24px">登録済み試合</h2>
-  <div class="row">
-    <div><label>リーグで絞り込み</label><select id="filterLeague"><option value="">すべて</option></select></div>
-    <div><label>チーム名で検索</label><input id="searchTeam" placeholder="チーム名"></div>
-  </div>
-  <div id="matchList"></div>
-</section>
-
-<section id="standings" class="hidden">
-  <h2>順位表</h2>
-  <label>対象リーグ</label><select id="standingLeague"></select>
-  <label>シーズン</label><input id="standingSeason" value="2026">
-  <p class="muted">登録された試合から集計。未確認の試合は順位計算に含めない。</p>
-  <div id="standingTable" class="table-wrap"></div>
-</section>
-
-<section id="backup" class="hidden">
-  <h2>データ管理</h2>
-  <p>記録はこのブラウザ内に保存されるよ。端末の変更やブラウザデータの消去に備えて、定期的にバックアップしてね。</p>
-  <div class="row">
-    <button id="exportJson">JSONバックアップを書き出す</button>
-    <button id="exportCsv" class="secondary">CSVを書き出す</button>
-  </div>
-  <h3>JSONから復元</h3>
-  <input id="importFile" type="file" accept=".json,application/json">
-  <button id="importJson" class="secondary" style="margin-top:10px">JSONを読み込む・追加する</button>
-  <p class="muted">読み込みは既存データへの追加。既存記録は自動削除しないよ。</p>
-  <button id="clearData" class="danger">すべての記録を削除</button>
-  <p class="muted">削除は取り消せないので、事前にバックアップしてね。</p>
-  <h3>データのルール</h3>
-  <ul>
-    <li>情報源が分かる場合はURLを保存する。</li>
-    <li>不明な結果は推測で埋めない。</li>
-    <li>公式の順位決定規定は大会ごとに確認する。</li>
-  </ul>
-</section>
-<footer>日本サッカー試合結果データベース・試作版 v0.1</footer>
-</main>
+<header><div class="wrap"><div class="brand">JAPAN SOCCER RESULTS</div><h1>日本サッカーの結果を、<br>ひとつの地図から。</h1><p>JFL・地域リーグを起点に、全国の公式戦結果をたどれるデータベースを目指します。</p></div></header>
+<main><section id="home"><div class="intro"><div><div class="eyebrow">EXPLORE BY REGION</div><h2>地域を選ぶ</h2></div><span class="tag">試作版 0.1</span></div>
+<div class="panel"><h3>日本全国</h3><p class="hint">地域をタップすると、対象リーグを確認できます。</p><div class="region-map" aria-label="地域選択"><button class="map-node" data-map="hokkaido">北海道</button><button class="map-node" data-map="tohoku">東北</button><button class="map-node" data-map="kanto">関東</button><button class="map-node" data-map="hokushinetsu">北信越</button><button class="map-node" data-map="tokai">東海</button><button class="map-node" data-map="kansai">関西</button><button class="map-node" data-map="chugoku">中国</button><button class="map-node" data-map="shikoku">四国</button><button class="map-node" data-map="kyushu">九州</button></div><div class="region-grid" id="regionGrid"></div></div>
+<div class="panel"><h3>このデータベースについて</h3><p class="hint" style="margin-bottom:0">結果が確認できない試合は推測で埋めず、未確認として扱います。選手の所属・移籍履歴は別プロジェクトとして管理します。</p></div></section>
+<section id="detail" hidden><div class="panel"><div class="results-head"><div><div class="eyebrow">REGION / LEAGUES</div><h2 id="regionTitle">地域</h2></div><button class="back" id="backBtn">← 全国に戻る</button></div><p class="hint" id="regionDescription"></p><div class="league-list" id="leagueList"></div><div class="notice">現在は画面と地域選択の試作段階です。試合結果・年度別一覧は次の開発工程で追加します。</div></div></section></main>
+<footer>Japan Soccer Results · 確認できる公開情報から段階的に整備します。</footer>
 <script>
-(function(){
-"use strict";
 const regions=[
-["北海道","北海道サッカーリーグ",["北海道"]],
-["東北","東北社会人サッカーリーグ",["青森県","岩手県","宮城県","秋田県","山形県","福島県"]],
-["関東","関東サッカーリーグ",["茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","山梨県"]],
-["北信越","北信越フットボールリーグ",["新潟県","長野県","富山県","石川県","福井県"]],
-["東海","東海社会人サッカーリーグ",["静岡県","愛知県","岐阜県","三重県"]],
-["関西","関西サッカーリーグ",["滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県"]],
-["中国","中国サッカーリーグ",["鳥取県","島根県","岡山県","広島県","山口県"]],
-["四国","四国サッカーリーグ",["徳島県","香川県","愛媛県","高知県"]],
-["九州","九州サッカーリーグ",["福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]]
-];
-const $=id=>document.getElementById(id);
-const key="japanSoccerResultsV01";
-let matches=[];
-try{matches=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(matches))matches=[]}catch(e){matches=[]}
-function save(){try{localStorage.setItem(key,JSON.stringify(matches))}catch(e){alert("保存できません。JSONバックアップを確認してください。")}}
-function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function renderRegions(){
- $("regions").innerHTML=regions.map((r,i)=>`<button class="region" data-region="${i}">${r[0]}</button>`).join("");
- $("regions").insertAdjacentHTML("beforeend",'<button class="region" data-region="jfl">JFL</button>');
- $("regions").querySelectorAll("button").forEach(b=>b.onclick=()=>{
-  const v=b.dataset.region;
-  if(v==="jfl"){selectLeague("JFL");return}
-  const r=regions[Number(v)];
-  $("regionTitle").textContent=r[0]+"のリーグ";
-  $("leagueArea").classList.remove("hidden");
-  $("leagues").innerHTML=`<button data-league="${esc(r[1])}">${esc(r[1])}</button><button class="secondary" data-league="都道府県リーグ">都道府県リーグ</button>`;
-  $("leagues").querySelectorAll("button").forEach(x=>x.onclick=()=>selectLeague(x.dataset.league));
- });
-}
-function selectLeague(name){$("league").value=name;showPage("matches");$("leagueArea").classList.remove("hidden");$("regionTitle").textContent=name+"を選択中";renderAll()}
-function allLeagues(){return [...new Set(["JFL",...regions.map(r=>r[1]),"都道府県リーグ",...matches.map(m=>m.league)])]}
-function refreshSelects(){
- const opts=allLeagues().map(x=>`<option>${esc(x)}</option>`).join("");
- const old=$("filterLeague").value,old2=$("standingLeague").value;
- $("filterLeague").innerHTML='<option value="">すべて</option>'+opts;
- $("standingLeague").innerHTML=opts;
- if([...$("filterLeague").options].some(o=>o.value===old))$("filterLeague").value=old;
- if([...$("standingLeague").options].some(o=>o.value===old2))$("standingLeague").value=old2;
-}
-function showPage(id){
- ["matches","standings","backup"].forEach(p=>$(p).classList.toggle("hidden",p!==id));
- document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));
- if(id==="standings")renderStandings();
-}
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>showPage(b.dataset.page));
-$("addMatch").onclick=()=>{
- const m={
- id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),
- season:$("season").value.trim(),league:$("league").value,
- round:$("round").value.trim(),date:$("date").value,
- home:$("home").value.trim(),away:$("away").value.trim(),
- hg:$("hg").value,ag:$("ag").value,venue:$("venue").value.trim(),
- source:$("source").value.trim(),verified:$("verified").value
- };
- if(!m.season||!m.league||!m.home||!m.away||m.home===m.away||m.hg===""||m.ag===""||Number(m.hg)<0||Number(m.ag)<0||!Number.isInteger(Number(m.hg))||!Number.isInteger(Number(m.ag))){
-  $("formMessage").textContent="シーズン、両チーム名、0以上の整数の得点を正しく入力してね。";return
- }
- m.hg=Number(m.hg);m.ag=Number(m.ag);
- matches.unshift(m);save();$("home").value="";$("away").value="";$("hg").value="";$("ag").value="";$("round").value="";$("venue").value="";$("source").value="";
- $("formMessage").textContent="試合結果を保存したよ。";renderAll();
-};
-function renderMatches(){
- const league=$("filterLeague").value,term=$("searchTeam").value.trim().toLowerCase();
- const list=matches.filter(m=>(!league||m.league===league)&&(!term||(m.home+" "+m.away).toLowerCase().includes(term)));
- $("matchList").innerHTML=list.length?list.map(m=>`<div class="match">
- <div class="muted">${esc(m.season)}年・${esc(m.league)} ${esc(m.round)} ${esc(m.date)} ${m.verified==="confirmed"?"":"・未確認"}</div>
- <div class="row"><div>${esc(m.home)}</div><div class="score">${m.hg} - ${m.ag}</div><div>${esc(m.away)}</div></div>
- <div class="muted">${esc(m.venue)} ${m.source?`・<a href="${esc(m.source)}" target="_blank" rel="noopener">情報源</a>`:""}</div>
- <button class="danger" data-delete="${m.id}" style="margin-top:8px;padding:7px 10px">この記録を削除</button></div>`).join(""):'<p class="muted">まだ試合結果がありません。最初の試合を登録してみよう。</p>';
- $("matchList").querySelectorAll("[data-delete]").forEach(b=>b.onclick=()=>{if(confirm("この試合記録を削除しますか？")){matches=matches.filter(m=>m.id!==b.dataset.delete);save();renderAll()}});
-}
-function renderStandings(){
- const league=$("standingLeague").value,season=$("standingSeason").value.trim();
- const rows={};
- matches.filter(m=>m.league===league&&m.season===season&&m.verified==="confirmed").forEach(m=>{
-  [[m.home,m.hg,m.ag],[m.away,m.ag,m.hg]].forEach(([name,gf,ga])=>{
-   const r=rows[name]||(rows[name]={team:name,p:0,w:0,d:0,l:0,gf:0,ga:0,pts:0});
-   r.p++;r.gf+=gf;r.ga+=ga;
-   if(gf>ga){r.w++;r.pts+=3}else if(gf===ga){r.d++;r.pts++}else r.l++;
-  });
- });
- const arr=Object.values(rows).sort((a,b)=>b.pts-a.pts||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf||a.team.localeCompare(b.team,"ja"));
- $("standingTable").innerHTML=arr.length?`<table><thead><tr><th>順位</th><th>チーム</th><th>試合</th><th>勝</th><th>分</th><th>敗</th><th>得点</th><th>失点</th><th>差</th><th>点</th></tr></thead><tbody>${arr.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.team)}</td><td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td><td>${r.gf}</td><td>${r.ga}</td><td>${r.gf-r.ga}</td><td><b>${r.pts}</b></td></tr>`).join("")}</tbody></table>`:'<p class="muted">このリーグ・シーズンの確認済み結果がありません。</p>';
-}
-function renderAll(){refreshSelects();renderMatches();renderStandings()}
-$("filterLeague").onchange=renderMatches;
-$("searchTeam").oninput=renderMatches;
-$("standingLeague").onchange=renderStandings;
-$("standingSeason").oninput=renderStandings;
-function download(name,content,type){
- const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);
- const a=document.createElement("a");a.href=url;a.download=name;a.click();
- setTimeout(()=>URL.revokeObjectURL(url),1000);
-}
-$("exportJson").onclick=()=>download("soccer-results-backup.json",JSON.stringify({version:1,exportedAt:new Date().toISOString(),matches},null,2),"application/json");
-$("exportCsv").onclick=()=>{
- const cols=["season","league","round","date","home","hg","ag","away","venue","source","verified"];
- const csv=[cols.join(","),...matches.map(m=>cols.map(c=>`"${String(m[c]??"").replace(/"/g,'""')}"`).join(","))].join("\r\n");
- download("soccer-results.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
-};
-$("importJson").onclick=async()=>{
- const file=$("importFile").files[0];if(!file){alert("JSONファイルを選んでね。");return}
- try{
-  const data=JSON.parse(await file.text());const incoming=Array.isArray(data)?data:data.matches;
-  if(!Array.isArray(incoming)||!incoming.every(m=>m&&typeof m==="object"&&m.season&&m.league&&m.home&&m.away&&Number.isInteger(Number(m.hg))&&Number.isInteger(Number(m.ag))&&Number(m.hg)>=0&&Number(m.ag)>=0)){throw Error("形式が違います")}
-  const known=new Set(matches.map(m=>m.id).filter(Boolean));let count=0;
-  incoming.forEach(m=>{if(!m.id||!known.has(m.id)){matches.push({...m,id:m.id||Date.now().toString(36)+Math.random().toString(36).slice(2,7)});count++}});
-  save();renderAll();alert(count+"件の記録を追加しました。");
- }catch(e){alert("読み込めませんでした。正しいバックアップJSONか確認してね。")}
-};
-$("clearData").onclick=()=>{if(confirm("全記録を削除します。本当に実行しますか？")){matches=[];save();renderAll()}};
-renderRegions();renderAll();
-})();
-</script>
-</body>
-</html>
+{id:'hokkaido',name:'北海道',area:'北海道リーグ',pref:'北海道'},
+{id:'tohoku',name:'東北',area:'東北社会人サッカーリーグ',pref:'青森・岩手・宮城・秋田・山形・福島'},
+{id:'kanto',name:'関東',area:'関東サッカーリーグ',pref:'茨城・栃木・群馬・埼玉・千葉・東京・神奈川・山梨'},
+{id:'hokushinetsu',name:'北信越',area:'北信越フットボールリーグ',pref:'新潟・長野・富山・石川・福井'},
+{id:'tokai',name:'東海',area:'東海社会人サッカーリーグ',pref:'静岡・愛知・岐阜・三重'},
+{id:'kansai',name:'関西',area:'関西サッカーリーグ',pref:'滋賀・京都・大阪・兵庫・奈良・和歌山'},
+{id:'chugoku',name:'中国',area:'中国サッカーリーグ',pref:'鳥取・島根・岡山・広島・山口'},
+{id:'shikoku',name:'四国',area:'四国サッカーリーグ',pref:'徳島・香川・愛媛・高知'},
+{id:'kyushu',name:'九州',area:'九州サッカーリーグ',pref:'福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島・沖縄'}];
+const grid=document.getElementById('regionGrid'),home=document.getElementById('home'),detail=document.getElementById('detail');
+regions.forEach(r=>{const b=document.createElement('button');b.className='region';b.innerHTML='<strong>'+r.name+'</strong><small>'+r.area+'</small>';b.addEventListener('click',()=>openRegion(r.id));grid.appendChild(b)});
+function openRegion(id){const r=regions.find(x=>x.id===id);if(!r)return;home.hidden=true;detail.hidden=false;document.getElementById('regionTitle').textContent=r.name+'エリア';document.getElementById('regionDescription').textContent='対象都道府県：'+r.pref;document.querySelectorAll('.map-node').forEach(n=>n.classList.toggle('active',n.dataset.map===id));const list=document.getElementById('leagueList');list.innerHTML='';[{name:'JFL',desc:'全国リーグ · 該当クラブの試合結果',pill:'全国'},{name:r.area,desc:'地域リーグ · 年度別の試合結果',pill:'地域'},{name:'都道府県リーグ',desc:r.pref+' · 収録可能な結果から整備',pill:'都道府県'}].forEach(l=>{const el=document.createElement('div');el.className='league';el.innerHTML='<div><h3>'+l.name+'</h3><p>'+l.desc+'</p></div><span class="pill">'+l.pill+'</span>';list.appendChild(el)});window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.map-node').forEach(n=>n.addEventListener('click',()=>openRegion(n.dataset.map)));
+document.getElementById('backBtn').addEventListener('click',()=>{detail.hidden=true;home.hidden=false;document.querySelectorAll('.map-node').forEach(n=>n.classList.remove('active'));window.scrollTo({top:0,behavior:'smooth'})});
+</script></body></html>
