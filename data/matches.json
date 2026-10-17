@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "description": "Verified match records only. An empty matches array means records have not yet been entered; it does not mean no matches were played.",
+  "matches": []
+}
