@@ -635,8 +635,8 @@
       "name": "中国サッカーリーグ",
       "region": "中国",
       "official_url": "https://csl-jp.net/",
-      "team_directory_url": "https://csl-jp.net/",
-      "league_results_url": "https://csl-jp.net/",
+      "team_directory_url": "https://csl-jp.net/team/",
+      "league_results_url": "https://csl-jp.net/result/",
       "categories_covered": [
         "中国サッカーリーグ（男子）"
       ],
@@ -644,7 +644,7 @@
       "usage_terms_status": "not_checked",
       "status": "partially_researched",
       "checked_at": "2026-10-17",
-      "notes": "公式トップに2026シーズン日程発表、試合日程・結果、順位表、星取表、得点ランキング、チーム情報への導線を確認。各ページの個別URL、過年度収録範囲、利用条件は未確認。"
+      "notes": "公式のチーム一覧ページと試合日程・結果ページを個別に確認。大会一覧では2026年度第54回中国サッカーリーグおよび2025年以前の大会ページへの導線も確認。利用条件は未確認。"
     }
   ]
 }
